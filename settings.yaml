@@ -1,2 +1,9 @@
-appId: "1905997149"
-appSecret: "p7Qk4Pl7UsGf5WxPsLpKpLsPxV4eEpR4"
+#!/bin/sh
+
+# 确保环境变量传递（Render的环境变量已经注入，这里只是兜底）
+export QQBOT_APPID="${1905997149}"
+export QQBOT_SECRET="${p7Qk4Pl7UsGf5WxPsLpKpLsPxV4eEpR4}"
+
+# 启动dsh的qqbot profile
+# Render要求Web服务绑定0.0.0.0:$PORT，这里显式传递
+exec npx @deepseek-ai/dsh --profile qqbot
